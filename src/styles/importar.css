@@ -1,0 +1,314 @@
+/* ===== Reset ===== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #020617;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--navy);
+    overflow: hidden;
+    height: 100%;
+    transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#root {
+    height: 100%;
+    overflow: hidden;
+}
+
+body.dark-bg {
+    background-color: #020617 !important;
+}
+
+/* ===== Page Grid Container ===== */
+
+.page {
+    height: 100vh;
+    max-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: clamp(24px, 4vw, 64px);
+    padding: 24px clamp(32px, 6vw, 96px);
+    max-width: 1380px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ===== Caixa Workspace ===== */
+
+.box-div {
+    width: 210px;
+    height: calc(100vh - 116px);
+    min-height: 0;
+    flex-shrink: 0;
+
+    background-color: #ffffff;
+    border-radius: 20px;
+
+    margin: 30px;
+    padding: 20px;
+
+    overflow-y: auto;
+}
+
+.box-div span {
+    font-size: 12px;
+    color: #5F6F82;
+}
+
+.box-div h2 {
+    font-size: 16px;
+    color: #14233A;
+    margin-top: 5px;
+}
+
+/* ===== Navegação ===== */
+
+.menu-operacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 18px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    width: 100%;
+    min-height: 34px;
+    padding: 0 9px;
+
+    border: none;
+    border-radius: 6px;
+    background-color: transparent;
+
+    color: #5F6F82;
+    font-family: inherit;
+    font-size: 11px;
+    text-align: left;
+
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.menu-item:hover {
+    background-color: #F1F5F9;
+    color: #14233A;
+}
+
+/* ===== Pontos dos botões ===== */
+
+.menu-ponto {
+    width: 4px;
+    height: 4px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: #A0AEC0;
+}
+
+/* ===== Item selecionado ===== */
+
+.menu-item.ativo {
+    background-color: #DCE7F5;
+    color: #14233A;
+    font-weight: 700;
+}
+
+.menu-item.ativo .menu-ponto {
+    background-color: #0B3C6E;
+}
+
+/* ===== Seção do menu ===== */
+
+
+.box-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+
+    width: 100%;
+    height: calc(100vh - 56px);
+    padding: 0;
+
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+/* ===== Fundo da tela ===== */
+
+.importar-content {
+    min-height: 0;
+}
+
+
+
+
+.box-div-atu {
+    padding: 16px;
+
+    border: 1px solid #E4E9EF;
+    border-radius: 15px;
+    margin-top: 195px;
+}
+
+.box-div-atu span {
+    display: block;
+    font-size: 11px;
+    color: #5F6F82;
+}
+
+.box-div-atu h4 {
+    margin: 8px 0;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #14233A;
+}
+
+
+
+
+
+
+/* ===== Conteúdo principal ===== */
+
+.box-div-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    padding: 16px 15px;
+
+    color: #14233A;
+}
+
+/* Título e descrição à esquerda */
+
+.importar-cabecalho {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+    min-width: 180px;
+}
+
+.importar-cabecalho h1 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #14233A;
+}
+
+.importar-cabecalho>span {
+    font-size: 9px;
+    line-height: 1.5;
+    color: #5F6F82;
+}
+
+/* Busca e botões à direita */
+
+.importar-acoes {
+    display: flex;
+    margin: 18px;
+    gap: 15px;
+}
+
+/* Campo de busca */
+
+.importar-busca {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    width: 192px;
+    height: 30px;
+    padding: 0 10px;
+
+    border: 1px solid #E4E9EF;
+    border-radius: 1000px;
+}
+
+.importar-busca img {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    color: #14233A;
+}
+
+.importar-busca input {
+    width: 100%;
+    min-width: 0;
+    border: none;
+    outline: none;
+    padding: 0;
+    background: transparent;
+
+    font-family: inherit;
+    font-size: 9px;
+    color: #14233A;
+}
+
+.importar-busca input::placeholder {
+    color: #475569;
+    opacity: 1;
+}
+
+/* Baixar modelo */
+
+.importar-modelo {
+    padding: 8px 0;
+    border: none;
+    background: transparent;
+    color: #14233A;
+
+    font-family: inherit;
+    font-size: 9px;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+/* Iniciar importação */
+
+.importar-iniciar {
+    padding: 9px 15px;
+    border: none;
+    border-radius: 999px;
+    background-color: #244779;
+    color: #FFFFFF;
+
+    font-family: inherit;
+    font-size: 9px;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.importar-iniciar:hover {
+    background-color: #19365E;
+}
