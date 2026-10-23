@@ -7,6 +7,7 @@ import CadastroNeocore from './CadastroNeocore';
 import ImportarNeocore from './ImportarNeocore';
 import Header from './Header';
 import AcessoNegado from './AcessoNegado';
+import SolicitarAcesso from './SolicitarAcesso';
 
 export default function App() {
   return (

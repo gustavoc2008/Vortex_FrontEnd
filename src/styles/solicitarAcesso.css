@@ -1,0 +1,330 @@
+
+/* ===== Fundo da modal ===== */
+
+.solicitar-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+    background: rgba(15, 23, 42, 0.52);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+
+    overflow-y: auto;
+}
+
+/* ===== Caixa principal ===== */
+
+.solicitar-modal {
+    position: relative;
+
+    width: 100%;
+    max-width: 468px;
+
+    padding: 36px;
+    box-sizing: border-box;
+
+    background: #ffffff;
+    border: 1px solid #e8edf5;
+    border-radius: 17px;
+
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.18);
+
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    color: #0f172a;
+}
+
+/* ===== Cabeçalho ===== */
+
+.solicitar-cabecalho {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-bottom: 27px;
+}
+
+.solicitar-fechar {
+    position: absolute;
+    top: 19px;
+    right: 21px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+    border: none;
+    border-radius: 7px;
+
+    background: transparent;
+    color: #64748b;
+
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1;
+
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.solicitar-fechar:hover {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+/* ===== Ícone superior ===== */
+
+.solicitar-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 19px;
+
+    background: #e8f0ff;
+    border-radius: 50%;
+}
+
+.solicitar-icone img {
+    width: 27px;
+    height: 27px;
+    object-fit: contain;
+}
+
+/* ===== Título e descrição ===== */
+
+.solicitar-cabecalho h2 {
+    margin: 0 0 10px;
+
+    color: #0f172a;
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.7px;
+}
+
+.solicitar-cabecalho > span {
+    max-width: 360px;
+
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.65;
+}
+
+/* ===== Formulário ===== */
+
+.solicitar-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.solicitar-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.solicitar-campo label {
+    color: #334b70;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* ===== Campos de entrada ===== */
+
+.solicitar-input {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    width: 100%;
+    min-height: 45px;
+    padding: 0 13px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+    border: 1px solid #d4ddec;
+    border-radius: 9px;
+
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.solicitar-input:focus-within {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+.solicitar-input img {
+    width: 18px;
+    height: 18px;
+
+    opacity: 0.75;
+}
+
+.solicitar-input input,
+.solicitar-input textarea {
+    width: 100%;
+    min-width: 0;
+
+    padding: 0;
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #0f172a;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.solicitar-input input {
+    height: 43px;
+}
+
+.solicitar-input input::placeholder,
+.solicitar-input textarea::placeholder {
+    color: #94a3b8;
+    opacity: 1;
+}
+
+/* ===== Campo de motivo ===== */
+
+.solicitar-textarea {
+    align-items: flex-start;
+    min-height: 108px;
+
+    padding-top: 13px;
+    padding-bottom: 12px;
+}
+
+.solicitar-textarea img {
+    margin-top: 2px;
+}
+
+.solicitar-input textarea {
+    min-height: 80px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.solicitar-ajuda {
+    color: #94a3b8;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+/* ===== Botões ===== */
+
+.solicitar-acoes {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 12px;
+
+    margin-top: 5px;
+}
+
+.solicitar-acoes button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 45px;
+    padding: 0 12px;
+
+    border-radius: 9px;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s,
+        color 0.2s, transform 0.2s;
+}
+
+/* Botão cancelar */
+
+.solicitar-btn-cancelar {
+    border: 1px solid #bdcadd;
+    background: #ffffff;
+    color: #23446f;
+}
+
+.solicitar-btn-cancelar:hover {
+    border-color: #94a3b8;
+    background: #f8fafc;
+}
+
+/* Botão enviar */
+
+.solicitar-btn-enviar {
+    border: 1px solid #064b7b;
+    background: #064b7b;
+    color: #ffffff;
+}
+
+.solicitar-btn-enviar:hover {
+    border-color: #04395e;
+    background: #04395e;
+}
+
+.solicitar-acoes button:active {
+    transform: scale(0.98);
+}
+
+/* ===== Responsividade ===== */
+
+@media (max-width: 520px) {
+    .solicitar-overlay {
+        padding: 16px;
+    }
+
+    .solicitar-modal {
+        max-width: 100%;
+        padding: 27px 22px;
+        border-radius: 14px;
+    }
+
+    .solicitar-cabecalho h2 {
+        font-size: 24px;
+    }
+
+    .solicitar-cabecalho > span {
+        font-size: 13px;
+    }
+
+    .solicitar-acoes {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .solicitar-acoes button {
+        min-height: 44px;
+    }
+}
+
+@media (max-height: 650px) {
+    .solicitar-overlay {
+        align-items: flex-start;
+    }
+
+    .solicitar-modal {
+        margin: auto 0;
+    }
+}

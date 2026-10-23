@@ -1,6 +1,11 @@
+import { useState } from "react";
 import "../styles/acessoNegado.css";
+import SolicitarAcesso from "./SolicitarAcesso";
 
 export default function AcessoNegado() {
+
+    const [modalSolicitarAcesso, setModalSolicitarAcesso] = useState(false)
+
     return (
         <main className="acesso-pagina">
             <section className="acesso-esquerda">
@@ -52,13 +57,25 @@ export default function AcessoNegado() {
 
                         <p className="acesso-ajuda">
                             Precisa de acesso?{" "}
-                            <a href="#" onClick={(evento) => evento.preventDefault()}>
+                            <a
+                                href="#"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    setModalSolicitarAcesso(true);
+                                }}
+                            >
                                 Solicitar acesso
                             </a>
                         </p>
                     </div>
                 </div>
             </section>
+
+            {modalSolicitarAcesso && (
+                <SolicitarAcesso
+                    fecharModal={() => setModalSolicitarAcesso(false)}
+                />
+            )}
         </main>
     );
 }
