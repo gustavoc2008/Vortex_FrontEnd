@@ -6,6 +6,7 @@ import Dashboard from './Dashboard';
 import CadastroNeocore from './CadastroNeocore';
 import ImportarNeocore from './ImportarNeocore';
 import Header from './Header';
+import AcessoNegado from './AcessoNegado';
 
 export default function App() {
   return (
@@ -14,8 +15,11 @@ export default function App() {
         {/* <Route path="/" element={<CadastroNeocore />} />
         <Route path="/dashboard" element={<Dashboard />} /> */}
 
-        <Route path="/" element={<ImportarNeocore />} />
-        <Route path="/importar" element={<ImportarNeocore />} />
+        {/* <Route path="/" element={<ImportarNeocore />} />
+        <Route path="/importar" element={<ImportarNeocore />} /> */}
+
+        <Route path="/" element={<AcessoNegado />} />
+        <Route path="/importar" element={<AcessoNegado />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
